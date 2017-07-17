@@ -37,7 +37,7 @@ namespace MyCMD
 				label.Content = pathToFile;
 				var dir = new List<string>(Directory.GetDirectories(pathToFile));
 				string temp = "";
-				foreach (string dirone in dir)
+				foreach (var dirone in dir)
 				{
 					temp += dirone + "\n";
 				}
@@ -48,10 +48,6 @@ namespace MyCMD
 			catch (System.IO.IOException err) {
 				MessageBox.Show(err.Message);
 			}
-
-
-			
-
 
 		}
 
