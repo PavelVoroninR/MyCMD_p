@@ -35,13 +35,15 @@ namespace MyCMD
 			try
 			{
 				label.Content = pathToFile;
-				var dir = new List<string>(Directory.GetDirectories(pathToFile));
-				string temp = "";
+				workKode dir = (dir.pathToFile(pathToFile));
+				dir.pathToFile = pathToFile;
 				foreach (var dirone in dir)
 				{
 					temp += dirone + "\n";
 				}
-				label.Content = temp;
+				label.Content = 
+
+				
 
 
 			}
@@ -54,6 +56,27 @@ namespace MyCMD
 		private void textBox_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			pathToFile = textBox.Text;
+		}
+		private void key_Pressed(object sender, KeyEventArgs e)
+		{
+			
+		}
+	}
+	sealed class workKode {
+		public object dir
+		{
+			get {GetDirCont_Dir() ; return dir; }
+			private set { this.dir = dir;  }
+		}
+		public string pathToFile
+		{
+			private get { return pathToFile; }
+			set { this.pathToFile = pathToFile; }
+		}
+
+
+		public void GetDirCont_Dir() {
+			dir = new List<string>(Directory.GetDirectories(pathToFile));
 		}
 	}
 }
